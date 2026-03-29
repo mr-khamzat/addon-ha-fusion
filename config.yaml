@@ -35,4 +35,4 @@ ports:
   8099/tcp: null
 
 # docker hub
-image: ghcr.io/mr-khamzat/addon-ha-fusion-{arch}
+image: ghcr.io/mr-khamzat/ha-fusion-{arch}
