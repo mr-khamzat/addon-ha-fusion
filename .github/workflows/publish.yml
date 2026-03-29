@@ -54,7 +54,10 @@ jobs:
           context: .
           platforms: ${{ matrix.platform }}
           push: true
-          build-args: BUILD_FROM=${{ matrix.base }}
+          build-args: |
+            BUILD_FROM=${{ matrix.base }}
+            BUILD_ARCH=${{ matrix.arch }}
+            BUILD_VERSION=${{ steps.version.outputs.version }}
           tags: |
             ghcr.io/${{ github.repository_owner }}/ha-fusion-${{ matrix.arch }}:latest
             ghcr.io/${{ github.repository_owner }}/ha-fusion-${{ matrix.arch }}:${{ steps.version.outputs.version }}

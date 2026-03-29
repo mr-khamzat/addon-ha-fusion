@@ -42,4 +42,15 @@ ENV PORT=8099 \
   NODE_ENV=production \
   ADDON=true
 
+# ha supervisor required labels
+ARG BUILD_ARCH
+ARG BUILD_VERSION
+LABEL \
+  io.hass.version="${BUILD_VERSION}" \
+  io.hass.type="addon" \
+  io.hass.arch="${BUILD_ARCH}" \
+  io.hass.name="Fusion" \
+  io.hass.description="A modern, easy-to-use and performant custom Home Assistant dashboard" \
+  io.hass.url="https://github.com/mr-khamzat/addon-ha-fusion"
+
 CMD [ "/run.sh" ]
